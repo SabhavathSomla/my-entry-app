@@ -1,73 +1,71 @@
-body, html, #root {
-  margin: 0;
-  padding: 0;
-  font-family: Arial, sans-serif;
-  background-color: #f5f5f5;
+/* General Body Styling */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
 }
 
-.App {
-  padding: 20px;
-}
-
+/* Navbar Styling */
 .navbar {
-  background-color: white;
-  padding: 16px;
-  display: flex;
-  justify-content: space-between;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #3f51b5;
+    color: white;
+    padding: 20px;
 }
 
 .title {
-  font-weight: bold;
-  font-size: 18px;
+    font-size: 24px;
+    font-weight: bold;
 }
 
-.add-btn, .submit-btn {
-  background-color: #007bff;
-  color: white;
-  padding: 8px 16px;
-  border: none;
-  border-radius: 6px;
-  font-weight: bold;
-  cursor: pointer;
-  margin-top: 10px;
+/* App Container Styling */
+.App {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
-.modal-bg {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background-color: rgba(0,0,0,0.4);
-  display: flex;
-  justify-content: center;
-  align-items: center;
+/* Entry Card Styling - Same Size Cards */
+.entry-card {
+    height: 180px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+    overflow: hidden;
+    background-color: white;
 }
 
-.modal {
-  background-color: white;
-  padding: 20px;
-  border-radius: 10px;
-  width: 300px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+/* Title: Single line ellipsis */
+.card-title {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
-.card-container {
-  display: flex;
-  flex-wrap: wrap;
-  margin-top: 20px;
-  gap: 16px;
+/* Content: Clamp to 3 lines */
+.card-content {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-top: 8px;
+    color: #555;
 }
 
-.card {
-  background-color: white;
-  padding: 16px;
-  border-radius: 10px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  width: 200px;
+/* Responsive Grid */
+@media (max-width: 600px) {
+    .MuiGrid-item {
+        padding: 10px 0;
+    }
 }
 
+/* Button Styling */
+.MuiButton-root {
+    font-weight: 500;
+}
