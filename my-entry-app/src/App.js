@@ -4,13 +4,13 @@ import './App.css';
 
 function App() {
   const [showModal, setShowModal] = useState(false);
-  const [formData, setFormData] = useState({ name: '', age: '', company: '' });
+  const [formData, setFormData] = useState({ title: '', content: '' });
   const [entries, setEntries] = useState([]);
 
   const handleSubmit = () => {
-    if (formData.name && formData.age && formData.company) {
+    if (formData.title && formData.content) {
       setEntries([...entries, formData]);
-      setFormData({ name: '', age: '', company: '' });
+      setFormData({ title: '', content: '' });
       setShowModal(false);
     }
   };
@@ -25,24 +25,19 @@ function App() {
       {showModal && (
         <div className="modal-bg" onClick={() => setShowModal(false)}>
           <div className="modal" onClick={(e) => e.stopPropagation()}>
-            <h2>Add Entry</h2>
-            <label>Name</label>
+            <h2>Add Entry </h2>
+            <label>Title</label>
             <input
               type="text"
-              value={formData.name}
-              onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+              value={formData.title}
+              onChange={(e) => setFormData({ ...formData, title: e.target.value })}
             />
-            <label>Age</label>
-            <input
-              type="number"
-              value={formData.age}
-              onChange={(e) => setFormData({ ...formData, age: e.target.value })}
-            />
-            <label>Company Name</label>
+
+            <label>Content</label>
             <input
               type="text"
-              value={formData.company}
-              onChange={(e) => setFormData({ ...formData, company: e.target.value })}
+              value={formData.content}
+              onChange={(e) => setFormData({ ...formData, content: e.target.value })}
             />
             <button className="submit-btn" onClick={handleSubmit}>Submit</button>
           </div>
@@ -52,9 +47,8 @@ function App() {
       <div className="card-container">
         {entries.map((entry, index) => (
           <div className="card" key={index}>
-            <p><strong>Name:</strong> {entry.name}</p>
-            <p><strong>Age:</strong> {entry.age}</p>
-            <p><strong>Company:</strong> {entry.company}</p>
+            <p><strong>Title:</strong> {entry.title}</p>
+            <p><strong>Content:</strong> {entry.content}</p>
           </div>
         ))}
       </div>
