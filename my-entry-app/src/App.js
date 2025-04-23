@@ -89,17 +89,17 @@ function App() {
             </Modal>
 
             {/* Entries Grid */}
-            <Grid container spacing={3} sx={{ mt: 2 }} justifyContent="center">
+            <Grid container spacing={3} sx={{ m: 3 }} >
             {entries.map((entry, index) => (
-                    <Grid item key={index}>
+                    <Grid size={4} item key={index}>
                         <Paper
                             elevation={3}
                             sx={{
-                                width: 300,
+
                                 height: 200,
                                 display: 'flex',
                                 flexDirection: 'column',
-                                justifyContent: 'space-between',
+                                
                                 padding: 2,
                                 boxSizing: 'border-box',
                                 overflow: 'hidden', // important!
