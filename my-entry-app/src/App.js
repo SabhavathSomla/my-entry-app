@@ -89,20 +89,50 @@ function App() {
             </Modal>
 
             {/* Entries Grid */}
-            <Grid container spacing={3} sx={{ mt: 2 }}>
-                {entries.map((entry, index) => (
-                    <Grid item xs={12} sm={6} md={4} key={index}>
-                        <Paper elevation={3} className="entry-card">
-                            <Typography variant="subtitle1" className="card-title">
+            <Grid container spacing={3} sx={{ mt: 2 }} justifyContent="center">
+            {entries.map((entry, index) => (
+                    <Grid item key={index}>
+                        <Paper
+                            elevation={3}
+                            sx={{
+                                width: 300,
+                                height: 200,
+                                display: 'flex',
+                                flexDirection: 'column',
+                                justifyContent: 'space-between',
+                                padding: 2,
+                                boxSizing: 'border-box',
+                                overflow: 'hidden', // important!
+                            }}
+                        >
+                            <Typography
+                                variant="subtitle1"
+                                sx={{
+                                    whiteSpace: 'nowrap',
+                                    overflow: 'hidden',
+                                    textOverflow: 'ellipsis',
+                                }}
+                            >
                                 <strong>Title:</strong> {entry.title}
                             </Typography>
-                            <Typography variant="body2" className="card-content">
+
+                            <Typography
+                                variant="body2"
+                                sx={{
+                                    whiteSpace: 'nowrap',
+                                    overflow: 'hidden',
+                                    textOverflow: 'ellipsis',
+                                }}
+                            >
                                 <strong>Content:</strong> {entry.content}
                             </Typography>
                         </Paper>
+
                     </Grid>
                 ))}
             </Grid>
+
+
         </div>
     );
 }
