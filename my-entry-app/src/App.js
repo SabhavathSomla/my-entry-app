@@ -99,7 +99,7 @@ function App() {
                                 height: 200,
                                 display: 'flex',
                                 flexDirection: 'column',
-                                
+
                                 padding: 2,
                                 boxSizing: 'border-box',
                                 overflow: 'hidden', // important!
